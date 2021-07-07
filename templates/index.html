@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+{% endblock css %}
+
+
+{% block body %}
+
+    <h1>Hello, world!</h1>
+
+    <form method="post" action="{% url 'core:home' %}" id="formdata" >
+        {% csrf_token %}
+        <select name="agents" id="options">
+            <option id="agent1">Agent 1</option>
+            <option id="agent2">Agent 2</option>
+            <option id="agent3">Agent 3</option>
+            <option id="agent4">Agent 4</option>
+            <option id="agent5">Agent 5</option>
+            <option id="agent6">Agent 6</option>
+            <option id="agent7">Agent 7</option>
+            <option id="agent8">Agent 8</option>
+            <option id="agent9">Agent 9</option>
+            <option id="agent10">Agent 10</option>
+        </select>    
+        
+        <input name="feedback" type="text"  id="feedback" required>
+        
+        <select name="price" id="price">
+            <option id="price1">$5</option>
+            <option id="price2">%10</option>
+            <option id="price3">$5</option>
+            <option id="price4">%10</option>
+            <option id="price5">$5</option>
+            <option id="price6">%10</option>
+            <option id="price7">$5</option>
+            <option id="price8">%10</option>
+            <option id="price9">$5</option>
+            <option id="price10">%10</option>
+        </select>    
+        
+        <button type="submit" data-loading-text="enviando..." onclick="submitInfo()">Send</button>
+    </form>    
+    
+    
+    <table>
+        t
+    </table>
+
+{% endblock body %}
+
+
+{% block js %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+{% endblock js %}
