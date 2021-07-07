@@ -14,7 +14,7 @@
 
     <form method="post" action="{% url 'core:home' %}" id="formdata" >
         {% csrf_token %}
-        <select name="agents" id="options">
+        <select name="agent" id="options">
             <option id="agent1">Agent 1</option>
             <option id="agent2">Agent 2</option>
             <option id="agent3">Agent 3</option>
@@ -46,9 +46,24 @@
     </form>    
     
     
-    <table>
-        t
-    </table>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Agent</th>
+            <th scope="col">Price</th>
+            <th scope="col">FeedBack</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>{{ agent|default_if_none:'Unknown' }}</td>
+            <td>{{ price|default_if_none:'0' }}</td>
+            <td>{{ feedback|default_if_none:'Empty' }}</td>
+          </tr>
+        </tbody>
+      </table>
 
 {% endblock body %}
 

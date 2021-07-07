@@ -9,7 +9,7 @@ from django.views import View
 class HomeView(View):
     template_name='index.html'
     def get(self,request, *args, **kwargs):
-        context={'agent': 'agent', 'price': 'price', 'feedback': 'feedback' }
+        context={'agent': None, 'price': None, 'feedback': None }
         return render(request, self.template_name, context)
     
     def post(self, request, *args, **kwargs):
@@ -17,7 +17,7 @@ class HomeView(View):
         if request.method == 'POST':
             agent    = request.POST.get('agent')
             feedback = request.POST.get('feedback')
-            price    = request.POST.get('proce')
+            price    = request.POST.get('price')
             print(agent, feedback, price)
         context={'agent': agent, 'price': price, 'feedback': feedback }
         return render(request, self.template_name, context)
