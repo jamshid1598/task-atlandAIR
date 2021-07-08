@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+{% endblock css %}
+
+{% block body %}
+
+	{% include 'includes/navbar-meal.html' %}
+
+	<div class = "container">
+		<div class="row">
+			{% for meal in object_list %}
+				<div class="col-md-4 col-sm-6 col-lg-3">
+				<div class="card">
+					<img class="card-img-top" src="{{ meal.image.url }}" alt="Card image cap">
+					<div class="card-body text-center">
+					<p class="card-title">{{ meal.name }}</p>
+					<hr>
+					<p class="card-text">{{ meal.region }}</p>
+					<a href="/meals/{{meal.id}}"><input
+						type="submit"
+						value="Learn More"
+						class="btn btn-danger btn-sm"
+						type="button"
+					/></a>
+					</div>
+				</div>
+				<br><br><br>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+{% endblock body %}
+
+
+{% block js %}
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+{% endblock js %}

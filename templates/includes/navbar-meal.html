@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Ticket</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'meal:home' %}">Meal <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <form action="{% url 'meal:home' %}" method='post' class="form-inline my-2 my-lg-0">
+        {% csrf_token %}
+        <input class="form-control mr-sm-2" type="text" name=q placeholder="Search for meal..." aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
