@@ -27,7 +27,7 @@ class HomeView(View):
             if obj_list != None:
                 print(obj_list)
                 for obj in obj_list:
-                    if Meal.objects.filter(slug=obj['idMeal']).exists():
+                    if not Meal.objects.filter(slug=obj['idMeal']).exists():
                         new_instance = Meal(
                             name        = obj['strMeal'],
                             category    = obj['strCategory'],
