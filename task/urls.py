@@ -30,7 +30,6 @@ urlpatterns = [
     path('', include('core.urls', namespace='core')),
     path('api-data/', include('api.urls', namespace='api')),
 ]
-
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,  document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 

@@ -25,7 +25,6 @@ class HomeView(View):
             data=response.json()
             obj_list = data['meals']
             if obj_list != None:
-                print(obj_list)
                 for obj in obj_list:
                     if not Meal.objects.filter(slug=obj['idMeal']).exists():
                         new_instance = Meal(
@@ -44,7 +43,8 @@ class HomeView(View):
 
 
 class DetailView(View):
-    template_name=''
-    def get(self, request, *args, **kwargs):
-        context={}
+    template_name='meal/detail.html'
+    def get(self, request, slug=None, *args, **kwargs):
+        obj = Meal.objects.get(slug=slug)
+        context={'object':obj}
         return render(request, self.template_name, context)

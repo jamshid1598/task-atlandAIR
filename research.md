@@ -2,4 +2,5 @@
 
 2 - Populate A Database From An External API in Django => https://dev.to/yahaya_hk/how-to-populate-your-database-with-data-from-an-external-api-in-django-398i
 
-3
+3 - Mocking External APIs in Python => https://realpython.com/testing-third-party-apis-with-mocks/
+
