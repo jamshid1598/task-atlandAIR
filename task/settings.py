@@ -16,8 +16,8 @@ from decouple import config
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOST = config('ALLOWED_HOSTS', default='localhost')
-# EMAIL_PORT = config('EMAIL_PORT', default=25, cast=int)
-# EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+AATGROUP_HOST_USERNAME = config('AATGROUP_HOST_USERNAME', default='username')
+AATGROUP_HOST_PASSWORD = config('AATGROUP_HOST_PASSWORD', default='')
 # EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 
 
@@ -49,6 +49,9 @@ INSTALLED_APPS = [
 
     'tinymce',
     'rest_framework',
+
+    'meal.apps.MealConfig',
+    'ticket.apps.TicketConfig',
 
     'core.apps.CoreConfig',
     'api.apps.ApiConfig',

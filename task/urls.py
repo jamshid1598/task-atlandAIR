@@ -24,6 +24,9 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
     path('api-auth/', include('rest_framework.urls')),
 
+    path('ticket/', include('ticket.urls', namespace='ticket')),
+    path('meal/', include('meal.urls', namespace='meal')),
+
     path('', include('core.urls', namespace='core')),
     path('api-data/', include('api.urls', namespace='api')),
 ]
